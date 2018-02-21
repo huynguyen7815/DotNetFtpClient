@@ -152,6 +152,8 @@ namespace FTPClientApp
                 try
                 {
                     currentDir = currentDir + "/" + subDir;
+                    Console.WriteLine("currentDir:" + currentDir);
+
                     FtpWebRequest reqFTP = FtpWebRequest.Create(currentDir) as FtpWebRequest;
                     reqFTP.Method = WebRequestMethods.Ftp.MakeDirectory;
                     reqFTP.Credentials = new NetworkCredential(login, password);
@@ -165,7 +167,7 @@ namespace FTPClientApp
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("ignored, folder alread exist");
+                    // Console.WriteLine("ignored, folder alread exist");
                     // Ignore if directory already exist.
                 }
             }

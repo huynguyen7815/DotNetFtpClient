@@ -72,6 +72,8 @@ namespace FTPClientApp
             foreach (string subDir in subDirs)
             {
                 currentDir = currentDir +@"\" + subDir;
+
+                Console.WriteLine("currentDir:" + currentDir);
                 bool exists = System.IO.Directory.Exists(currentDir);
                 if (!exists)
                     System.IO.Directory.CreateDirectory(currentDir);
